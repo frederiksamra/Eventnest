@@ -1,78 +1,146 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Eventnest
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Sistem Manajemen Event berbasis web yang dibangun menggunakan Laravel Framework.
 
-## About Laravel
+## Tentang Projek
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Eventnest adalah aplikasi manajemen event yang dikembangkan sebagai projek **Ujian Akhir Semester** mata kuliah **Pemrograman Web Lanjutan**. Aplikasi ini memungkinkan pengguna untuk membuat, mengelola, dan mendaftar ke berbagai event/acara.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   **Manajemen Event**: Membuat, mengedit, dan menghapus event
+-   **Registrasi Pengguna**: Sistem autentikasi dan manajemen user
+-   **Dashboard Admin**: Panel kontrol untuk mengelola event dan pengguna
+-   **Database Management**: Menggunakan Eloquent ORM untuk pengelolaan data
+-   **Responsive Design**: Tampilan yang responsif untuk berbagai perangkat
 
-## Learning Laravel
+## Teknologi yang Digunakan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   **Framework**: Laravel 6.x
+-   **PHP**: ^7.2.5 atau ^8.0
+-   **Database**: MySQL/MariaDB
+-   **Frontend**: Blade Template Engine
+-   **Build Tools**: Laravel Mix / Webpack
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Persyaratan Sistem
 
-## Laravel Sponsors
+-   PHP >= 7.2.5
+-   Composer
+-   MySQL atau database lain yang didukung Laravel
+-   Node.js & NPM (untuk asset compilation)
+-   Web Server (Apache/Nginx)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Instalasi
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+1. **Clone Repository**
 
-## Contributing
+    ```bash
+    git clone <repository-url>
+    cd Eventnest
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. **Install Dependencies**
 
-## Code of Conduct
+    ```bash
+    composer install
+    npm install
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. **Konfigurasi Environment**
 
-## Security Vulnerabilities
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. **Konfigurasi Database**
 
-## License
+    Edit file `.env` dan sesuaikan konfigurasi database:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    ```
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=eventnest
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
+
+5. **Migrasi Database**
+
+    ```bash
+    php artisan migrate
+    ```
+
+6. **Seed Database (Opsional)**
+
+    ```bash
+    php artisan db:seed
+    ```
+
+7. **Compile Assets**
+
+    ```bash
+    npm run dev
+    ```
+
+8. **Jalankan Server**
+
+    ```bash
+    php artisan serve
+    ```
+
+    Aplikasi dapat diakses melalui `http://localhost:8000`
+
+## Struktur Projek
+
+```
+├── app/
+│   ├── Event.php          # Model Event
+│   ├── User.php           # Model User
+│   ├── Http/
+│   │   └── Controllers/   # Controllers
+│   └── ...
+├── database/
+│   ├── migrations/        # Database migrations
+│   └── seeds/             # Database seeders
+├── public/                # Public assets
+├── resources/
+│   ├── views/             # Blade templates
+│   └── ...
+├── routes/
+│   └── web.php            # Web routes
+└── ...
+```
+
+## Penggunaan
+
+### Menjalankan Development Server
+
+```bash
+php artisan serve
+```
+
+### Menjalankan Tests
+
+```bash
+php artisan test
+```
+
+### Build Production Assets
+
+```bash
+npm run production
+```
+
+## Dokumentasi Laravel
+
+Untuk informasi lebih lanjut tentang Laravel, silakan kunjungi:
+
+-   [Dokumentasi Laravel](https://laravel.com/docs)
+-   [Laracasts](https://laracasts.com)
+
+## Kontributor
+
+Projek ini dikembangkan sebagai bagian dari Ujian Akhir Semester mata kuliah Pemrograman Web Lanjutan.
+
